@@ -22,20 +22,7 @@ public class HelloController {
 	public String index() {
 		
 		
-		return """
-				<!DOCTYPE html>
-				<html>
-				<head>
-				<meta charset="ISO-8859-1">
-				<title>Awesome API REST</title>
-				</head>
-				<body>
-				<h1 style="color:red;">Bienvenido a la API extraterrestre</h1>
-				<a href="/api/cars">Cars Database</a>
-				
-				</body>
-				</html>
-				""";
+		return "Hello!!!";
 	}
 	
 	/**
