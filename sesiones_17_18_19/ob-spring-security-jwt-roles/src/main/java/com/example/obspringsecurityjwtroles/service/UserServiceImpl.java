@@ -63,7 +63,7 @@ public class UserServiceImpl implements UserDetailsService, UserService {
         User nUser = user.getUserFromDto();
 
         if(userRepository.existsByEmail(nUser.getEmail()))
-            throw new EmailAlreadyExistsException("Email ocupado");
+            throw new EmailAlreadyExistsException("Email already exists");
 
         nUser.setPassword(bcryptEncoder.encode(user.getPassword()));
 
@@ -71,7 +71,7 @@ public class UserServiceImpl implements UserDetailsService, UserService {
         Set<Role> roleSet = new HashSet<>();
         roleSet.add(role);
 
-        if(nUser.getEmail().split("@")[1].equals("admin.edu")){
+        if(nUser.getEmail().split("@")[1].equals("admin.com")){
             role = roleService.findByName("ADMIN");
             roleSet.add(role);
         }
